@@ -603,6 +603,11 @@ progress {
   height: auto;
 }
 
+.img-clube {
+  width: 7rem;
+  height: 7rem;
+}
+
 .img-thumbnail {
   padding: 0.25rem;
   background-color: #fff;
