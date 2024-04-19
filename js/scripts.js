@@ -108,7 +108,7 @@ function buildAgenda(events){
         <div class="col-lg-4 col-sm-6">
             <!-- Portfolio item 6-->
             <div class="portfolio-item">
-                <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal${events[i]._id}">
+                <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal${events[i]._id}${dDate.toLocaleDateString().replaceAll('/','')}">
                     <div class="portfolio-hover">
                         <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                     </div>
@@ -125,7 +125,7 @@ function buildAgenda(events){
         </div>`
 
         rowF+=
-            `<div class="portfolio-modal modal fade" id="portfolioModal${events[i]._id}" tabindex="-1" role="dialog" aria-hidden="true">
+            `<div class="portfolio-modal modal fade" id="portfolioModal${events[i]._id}${dDate.toLocaleDateString().replaceAll('/','')}" tabindex="-1" role="dialog" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
