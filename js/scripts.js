@@ -71,6 +71,7 @@ window.onload = async () => {
         //  ,mode: 'no-cors'
        };
     
+    // fetch("http://localhost:8888/.netlify/functions/events?split_duels=1&order=1&date_from="+d.toISOString().substring(0,10),
     fetch("https://tpmonline.com.br/.netlify/functions/events?split_duels=1&order=1&date_from="+d.toISOString().substring(0,10),
         requestOptions
        ).then(r=>r.json())
@@ -112,7 +113,7 @@ function buildAgenda(events){
                     <div class="portfolio-hover">
                         <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                     </div>
-                    <img class="img-fluid" src="https://res.cloudinary.com/duk7tmek7/image/upload/c_fill,g_auto,h_450,w_450/${events[i]._id}" alt="..."  onerror="this.onerror=null;this.src='https://res.cloudinary.com/duk7tmek7/image/upload/c_fill,g_auto,h_450,w_450/defaults/tmpyellow'" />
+                    <img class="img-fluid" src="https://res.cloudinary.com/duk7tmek7/image/upload/c_fill,g_auto,h_450,w_600/${events[i]._id}" alt="..."  onerror="this.onerror=null;this.src='https://res.cloudinary.com/duk7tmek7/image/upload/c_fill,g_auto,h_450,w_600/defaults/tmpyellow'" />
                 </a>
                 <div class="portfolio-caption">
                     <div class="portfolio-caption-heading">${events[i].name}</div>
@@ -136,7 +137,7 @@ function buildAgenda(events){
                                         <!-- Project details-->
                                         <h2 class="text-uppercase">${dDate.toLocaleDateString().substring(0,5)} ${events[i].name} as ${sHour} hs</h2>
                                         <p class="item-intro text-muted">${sDivisions}</p>
-                                        <img class="img-fluid d-block mx-auto" src="https://res.cloudinary.com/duk7tmek7/image/upload/c_fill,g_auto,h_600,w_600/${events[i]._id}" alt="..." onerror="this.onerror=null;this.src='https://res.cloudinary.com/duk7tmek7/image/upload/c_fill,g_auto,h_450,w_450/defaults/tmpyellow'" />
+                                        <img class="img-fluid d-block mx-auto" src="https://res.cloudinary.com/duk7tmek7/image/upload/c_fill,g_auto,h_450,w_600/${events[i]._id}" alt="..." onerror="this.onerror=null;this.src='https://res.cloudinary.com/duk7tmek7/image/upload/c_fill,g_auto,h_450,w_600/defaults/tmpyellow'" />
                                         <p>${events[i].subTitle}</p>
                                         <p>${events[i].note}</p>
                                         <ul class="list-inline">
