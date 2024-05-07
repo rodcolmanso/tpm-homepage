@@ -86,6 +86,15 @@ window.onload = async () => {
     ;
 
 }
+function uuidv4() {
+    try{
+        return "10000000-1000-4000-8000-100000000000".replace(/[018]/g, c =>
+        (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
+        );
+    }catch(e){
+        return (Math.random()*1000000).toString();
+    }
+  }
 
 function buildAgenda(events){
     let row='';
@@ -113,7 +122,7 @@ function buildAgenda(events){
                     <div class="portfolio-hover">
                         <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                     </div>
-                    <img class="img-fluid" src="https://res.cloudinary.com/duk7tmek7/image/upload/c_fill,g_auto,h_450,w_600/${events[i]._id}" alt="..."  onerror="this.onerror=null;this.src='https://res.cloudinary.com/duk7tmek7/image/upload/c_fill,g_auto,h_450,w_600/defaults/tmpyellow'" />
+                    <img class="img-fluid" src="https://res.cloudinary.com/duk7tmek7/image/upload/c_limit,h_450,w_600/d_defaults:tmpyellow.jpg/${events[i]._id}.jpg?${uuidv4()}" alt="..." />
                 </a>
                 <div class="portfolio-caption">
                     <div class="portfolio-caption-heading">${events[i].name}</div>
@@ -123,7 +132,7 @@ function buildAgenda(events){
                     <div class="portfolio-caption-subheading text-muted">${sDivisions}</div>
                 </div>
             </div>
-        </div>`
+        </div>`;
 
         rowF+=
             `<div class="portfolio-modal modal fade" id="portfolioModal${events[i]._id}${dDate.toLocaleDateString().replaceAll('/','')}" tabindex="-1" role="dialog" aria-hidden="true">
@@ -137,7 +146,7 @@ function buildAgenda(events){
                                         <!-- Project details-->
                                         <h2 class="text-uppercase">${dDate.toLocaleDateString().substring(0,5)} ${events[i].name} as ${sHour} hs</h2>
                                         <p class="item-intro text-muted">${sDivisions}</p>
-                                        <img class="img-fluid d-block mx-auto" src="https://res.cloudinary.com/duk7tmek7/image/upload/c_fill,g_auto,h_450,w_600/${events[i]._id}" alt="..." onerror="this.onerror=null;this.src='https://res.cloudinary.com/duk7tmek7/image/upload/c_fill,g_auto,h_450,w_600/defaults/tmpyellow'" />
+                                            <img class="img-fluid d-block mx-auto" src="https://res.cloudinary.com/duk7tmek7/image/upload/c_limit,h_450,w_600/d_defaults:tmpyellow.jpg/${events[i]._id}.jpg?${uuidv4()}" alt="..." />
                                         <p>${events[i].subTitle}</p>
                                         <p>${events[i].note}</p>
                                         <ul class="list-inline">
