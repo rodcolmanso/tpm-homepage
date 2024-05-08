@@ -122,7 +122,9 @@ function buildAgenda(events){
                     <div class="portfolio-hover">
                         <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                     </div>
-                    <img class="img-fluid" src="https://res.cloudinary.com/duk7tmek7/image/upload/c_limit,h_450,w_600/d_defaults:tmpyellow.jpg/${events[i]._id}.jpg?${uuidv4()}" alt="..." />
+                    
+                        <img class="img-fluid" src="https://res.cloudinary.com/duk7tmek7/image/upload/c_limit,h_450,w_600/d_defaults:tmpyellow.jpg/${events[i]._id}.jpg?${uuidv4()}" alt="..." />
+                    
                 </a>
                 <div class="portfolio-caption">
                     <div class="portfolio-caption-heading">${events[i].name}</div>
@@ -161,9 +163,13 @@ function buildAgenda(events){
                                                 <br/>
                                             </li>
                                         </ul>
-                                        <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                        <!--<button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
                                             <i class="fas fa-xmark me-1"></i>
                                             Fechar
+                                        </button>-->
+                                        <button class="btn btn-primary btn-xl text-uppercase" onclick="location='https://tpmonline.com.br/event-details.html?event_id=${events[i]._id}'" type="button">
+                                            <i class="fas fa-clock fa-inverse"></i>
+                                            Inscreva-se
                                         </button>
                                     </div>
                                 </div>
