@@ -167,7 +167,7 @@ function buildAgenda(events){
                                             <i class="fas fa-xmark me-1"></i>
                                             Fechar
                                         </button>-->
-                                        <button class="btn btn-primary btn-xl text-uppercase" onclick="location='https://tpmonline.com.br/event-details.html?event_id=${events[i]._id}'" type="button">
+                                        <button class="btn btn-primary btn-xl text-uppercase" onclick="window.open('https://tpmonline.com.br/event-details.html?event_id=${events[i]._id}','_blank')" type="button">
                                             <i class="fas fa-clock fa-inverse"></i>
                                             Inscreva-se
                                         </button>
