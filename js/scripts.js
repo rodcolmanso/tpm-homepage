@@ -62,7 +62,10 @@ window.addEventListener('DOMContentLoaded', event => {
 window.onload = async () => {
     //obter a lista de eventos do backend
     let d = new Date();
-    d.setDate(d.getDate() - 7);
+    d.setDate(d.getDate());
+
+    let dTo = new Date();
+    dTo.setDate(dTo.getDate()+45);
     
     var requestOptions = {
         'content-type': 'application/json',
@@ -71,8 +74,8 @@ window.onload = async () => {
         //  ,mode: 'no-cors'
        };
     
-    // fetch("http://localhost:8888/.netlify/functions/events?split_duels=1&order=1&date_from="+d.toISOString().substring(0,10),
-    fetch("https://tpmonline.com.br/.netlify/functions/events?split_duels=1&order=1&date_from="+d.toISOString().substring(0,10),
+    // fetch("http://localhost:8888/.netlify/functions/events?split_duels=1&order=1&date_from="+d.toISOString().substring(0,10)+"&date_to="+d.toISOString().substring(0,10),
+    fetch("https://tpmonline.com.br/.netlify/functions/events?split_duels=1&order=1&date_from="+d.toISOString().substring(0,10)+"&date_to="+dTo.toISOString().substring(0,10),
         requestOptions
        ).then(r=>r.json())
         // ).then(r=>console.log('AQUI+r'+r))
@@ -163,14 +166,14 @@ function buildAgenda(events){
                                                 <br/>
                                             </li>
                                         </ul>
-                                        <!--<button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                        <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
                                             <i class="fas fa-xmark me-1"></i>
                                             Fechar
-                                        </button>-->
-                                        <button class="btn btn-primary btn-xl text-uppercase" onclick="window.open('https://tpmonline.com.br/event-details.html?event_id=${events[i]._id}','_blank')" type="button">
+                                        </button>
+                                        <!--<button class="btn btn-primary btn-xl text-uppercase" onclick="window.open('https://tpmonline.com.br/event-details.html?event_id=${events[i]._id}','_blank')" type="button">
                                             <i class="fas fa-clock fa-inverse"></i>
                                             Inscreva-se
-                                        </button>
+                                        </button>-->
                                     </div>
                                 </div>
                             </div>
